@@ -14,6 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 import logo from '../../images/logodpz.png';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import PropTypes from 'prop-types';
+ 
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -47,9 +48,9 @@ export default function Header(props) {
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
+    // if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    //   return;
+    // }
 
     setState({ ...state, [anchor]: open });
   };
@@ -58,12 +59,13 @@ export default function Header(props) {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+     // sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ width : 'auto' }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List sx={{paddingTop: "20px"}}>
+      {/* <List sx={{paddingTop: "200px"}}>
         {['Về DpZ', 'Dịch vụ', 'Đối tác', 'Liên hệ'].map((text, index) => (
           <ListItem key={text}>
             <ListItemButton>
@@ -82,7 +84,9 @@ export default function Header(props) {
             </ListItemButton>
           </ListItem>
         ))}
-      </List>
+      </List> */}
+      
+
     </Box>
   );
 
@@ -104,7 +108,7 @@ export default function Header(props) {
             <MenuIcon />
           </IconButton>
           <Drawer
-            anchor={anchor}
+            // anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
           >

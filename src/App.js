@@ -1,4 +1,5 @@
 import './App.css';
+import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Header from './components/header/Header';
 import Hero from './components/hero/Hero';
@@ -13,6 +14,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import PropTypes from 'prop-types';
 import { Fab, Fade, Box } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import SignInSide from './views/Signup';
 
 
 function ScrollTop(props) {
@@ -35,6 +37,8 @@ function ScrollTop(props) {
     }
   };
 
+  
+
   return (
     <Fade in={trigger}>
       <Box
@@ -53,6 +57,8 @@ ScrollTop.propTypes = {
   window: PropTypes.func,
 };
 
+
+
 function App(props) {
   return (
     <ThemeProvider theme={theme}>
@@ -63,7 +69,9 @@ function App(props) {
             <ProductInfo /> 
             <DichVu /> 
             <Partners /> 
+            <SignInSide></SignInSide>
             <Footer /> 
+           
             <ScrollTop {...props}>
               <Fab size="small" aria-label="scroll back to top">
                 <KeyboardArrowUpIcon color="secondary"/>
